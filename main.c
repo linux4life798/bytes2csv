@@ -18,11 +18,12 @@
 void usage(FILE *out)
 {
 	fprintf(out, "Reads a binary and presents the bytes in ways\n");
-	fprintf(out, "Usage: bytes2csv [-a] [-n] [-h] [input]\n");
+	fprintf(out, "Usage: bytes2csv [-a] [-n] [-h] [input-file]\n");
 	fprintf(out, "\t-a: insert row of ascii\n");
 	fprintf(out, "\t-n: insert row of numbers\n");
 	fprintf(out, "\t-h: help\n");
-	fprintf(out, "\t-h: help\n");
+	fprintf(out, "\tinput-file: binary char file to convert\n");
+	fprintf(out, "note: also supports piping. Eg. cat binfile | bytes2csv");
 }
 
 extern char *optarg;
@@ -65,9 +66,9 @@ int main(int argc, char *argv[]) {
 	}
 
 	/* print hex chars row 1 */
-	printf("%X", fgetc(input));
+	printf("%.2X", fgetc(input));
 	while(!feof(input))
-		printf(",%X", fgetc(input));
+		printf(",%.2X", fgetc(input));
 
 	/* print ascii chars row if -a flag */
 	if(ascii)
