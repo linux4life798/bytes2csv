@@ -12,7 +12,7 @@
 #include <errno.h>
 #include <string.h> /* strerr() */
 
-#define TRUE 1
+#define TRUE  1
 #define FALSE 0
 
 void usage(FILE *out)
@@ -31,7 +31,6 @@ extern int optind, opterr, optopt;
 
 int main(int argc, char *argv[]) {
 	int ascii = FALSE, numbs = FALSE;
-	char *cmdin = NULL;
 	int opt = 0;
 	FILE *input = NULL;
 
@@ -43,9 +42,6 @@ int main(int argc, char *argv[]) {
 			case 'n':
 				numbs = TRUE;
 				break;
-			case '1':
-				cmdin = optarg;
-				break;
 			case 'h':
 			case '?':
 				usage(stderr);
@@ -55,9 +51,9 @@ int main(int argc, char *argv[]) {
 	}
 
 	/* is input file an argument or piped in */
-	if(cmdin)
+	if(optind < argc)
 	{
-		input = fopen(optarg,"r");
+		input = fopen(argv[optind],"r");
 		if(!input){
 			fprintf(stderr, "Error opening %s - %s\n", optarg, strerror(errno));
 			exit(1);
