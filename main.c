@@ -73,18 +73,27 @@ int main(int argc, char *argv[]) {
 	/* print ascii chars row if -a flag */
 	if(ascii)
 	{
+		/* dose not show col value if cha is not visible */
+		char c;
+		putchar('\n');
 		rewind(input);
-		printf("%c", fgetc(input));
-		while(!feof(input))
-			printf(",%c", fgetc(input));
+		c = fgetc(input); 
+		if((' ' <= c) && (c <= '~'))
+			printf("%c",c);
+		while(!feof(input)) {
+			c = fgetc(input);
+			if((' ' <= c) && (c <= '~'))
+				printf(",%c",c);
+		}
 	}
 	/* print numbs row if -n flag */
 	if(numbs)
 	{
+		putchar('\n');
 		rewind(input);
-		printf("%u", fgetc(input));
+		printf("%3u", fgetc(input));
 		while(!feof(input))
-			printf(",%u", fgetc(input));
+			printf(",%3u", fgetc(input));
 	}
 
 	if(input != stdout)
