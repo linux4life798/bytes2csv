@@ -1,5 +1,5 @@
 /**
- * Reads a binary file and outputs a Comma Seperated Value(CSV) 
+ * Reads a binary file and outputs a Comma Separated Value(CSV) 
  * 	list of it's chars represented in different ways.
  *
  * @author Craig Hesling
@@ -17,6 +17,7 @@
 
 void usage(FILE *out)
 {
+	fprintf(out, "Reads a binary and presents the bytes in ways\n");
 	fprintf(out, "Usage: bytes2csv [-a] [-n] [-h] [input]\n");
 	fprintf(out, "\t-a: insert row of ascii\n");
 	fprintf(out, "\t-n: insert row of numbers\n");

@@ -16,7 +16,7 @@ bytes2csv.o: main.c
 clean:
 	$(RM) bytes2csv bytes2csv.o
 
-install:
+install: bytes2csv
 	[ -d $(BIN_PATH) ] || { echo "### Creating local bin ($(HOME)/bin)"; mkdir -p $(BIN_PATH); }
 	[ ! -e $(BIN_PATH)/bytes2csv ] || { echo "### Removing existing file"; rm -i $(BIN_PATH)/bytes2csv; }
 	cp bytes2csv $(BIN_PATH)/
