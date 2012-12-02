@@ -96,6 +96,8 @@ int main(int argc, char *argv[]) {
 			printf(",%3u", fgetc(input));
 	}
 
+	putchar('\n');
+
 	if(input != stdout)
 		fclose(input);
 
