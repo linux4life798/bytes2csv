@@ -62,8 +62,10 @@ int main(int argc, char *argv[]) {
 			exit(1);
 		}
 	}
-	else
+	else {
+		printf("Reading input file\n\n");
 		input = stdin;
+	}
 
 	/* print hex chars row 1 */
 	printf("%X", fgetc(input));
