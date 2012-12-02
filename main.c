@@ -17,7 +17,7 @@
 
 void usage(FILE *out)
 {
-	fprintf(out, "Reads a binary and presents the bytes in ways\n");
+	fprintf(out, "Reads a binary and presents the bytes in as hex, ascii chars, and/or natural numbers.\n");
 	fprintf(out, "Usage: bytes2csv [-a] [-n] [-h] [input-file]\n");
 	fprintf(out, "\t-a: insert row of ascii\n");
 	fprintf(out, "\t-n: insert row of numbers\n");
