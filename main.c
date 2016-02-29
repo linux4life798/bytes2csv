@@ -23,7 +23,7 @@ void usage(FILE *out)
 	fprintf(out, "\t-n: insert row of numbers\n");
 	fprintf(out, "\t-h: help\n");
 	fprintf(out, "\tinput-file: binary char file to convert\n");
-	fprintf(out, "note: also supports piping. Eg. cat binfile | bytes2csv");
+	fprintf(out, "note: also supports piping. Eg. cat binfile | bytes2csv\n");
 }
 
 extern char *optarg;
